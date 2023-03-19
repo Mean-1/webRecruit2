@@ -115,7 +115,7 @@ public class UsersServiceImpl extends ServiceImpl<UsersMapper, Users> implements
 
         //随机用户名
         String str = "用户"+ ((int) (Math.random() * 1000));
-
+        System.out.println();
         if(null==phone||null==password){
             return RespBean.error("账号或密码为空，添加失败");
         }
