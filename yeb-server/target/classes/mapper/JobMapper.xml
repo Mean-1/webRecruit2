@@ -18,10 +18,12 @@
 
     <resultMap id="getAllJobWithCompany" type="com.xxx.server.pojo.Job" extends="BaseResultMap">
         <collection property="company" ofType="com.xxx.server.pojo.Company">
+            <id column="cid" property="id"/>
             <result column="cname" property="name"/>
             <result column="ctag" property="tag"/>
             <result column="size" property="size"/>
             <result column="address" property="address"/>
+            <result column="icon" property="icon"/>
         </collection>
     </resultMap>
 
@@ -30,7 +32,52 @@
         id, name, experience, qualification, salary, tag, company_id, posted_at, created_at, updated_at
     </sql>
 
+<!--    查询筛选的职位-->
+    <select id="getAllJobWithSearch" resultMap="getAllJobWithCompany">
+        select
+            job.id ,
+            job.name ,
+            job.experience,
+            job.qualification,
+            job.salary,
+            job.tag ,
+            job.posted_at,
+            job.created_at,
+            job.updated_at,
+            company.id as cid,
+            company.name as cname,
+            company.tag as ctag,
+            company.size,
+            company.address,
+            company.icon
+        from
+            job LEFT JOIN company on job.company_id=company.id
+        where
+            1=1
+        <if test="null!=jobSearchParam.search and ''!=jobSearchParam.search">
+            AND (company.`name` LIKE CONCAT('%',#{jobSearchParam.search},'%') or job.`name`LIKE CONCAT('%',#{jobSearchParam.search},'%'))
+        </if>
+        <if test="null!=jobSearchParam.c_address and ''!=jobSearchParam.c_address">
+            AND company.`address` LIKE CONCAT('%',#{jobSearchParam.c_address},'%')
+        </if>
+        <if test="null!=jobSearchParam.experience and ''!=jobSearchParam.experience">
+            AND job.`experience` =#{jobSearchParam.experience}
+        </if>
+        <if test="null!=jobSearchParam.qualification and ''!=jobSearchParam.qualification">
+            AND job.`qualification` =#{jobSearchParam.qualification}
+        </if>
+        <if test="null!=jobSearchParam.salary and ''!=jobSearchParam.salary">
+            AND job.`salary` =#{jobSearchParam.salary}
+        </if>
+        <if test="null!=jobSearchParam.c_size and ''!=jobSearchParam.c_size">
+            AND company.`size` =jobSearchParam.c_size
+        </if>
+        ORDER BY
+            job.id
+    </select>
 
+
+<!--    查询所有职位-->
     <select id="getAllJob" resultMap="getAllJobWithCompany">
         select
             job.id ,
@@ -42,10 +89,12 @@
             job.posted_at,
             job.created_at,
             job.updated_at,
+            company.id as cid,
             company.name as cname,
             company.tag as ctag,
             company.size,
-            company.address
+            company.address,
+            company.icon
         from
             job LEFT JOIN company on job.company_id=company.id
         where

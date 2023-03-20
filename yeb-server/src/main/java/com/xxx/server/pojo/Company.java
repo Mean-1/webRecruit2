@@ -48,6 +48,9 @@ public class Company implements Serializable {
     @ApiModelProperty(value = "标签")
     private String tag;
 
+    @ApiModelProperty(value = "公司图标地址")
+    private String icon;
+
     private LocalDateTime created_at;
 
     private LocalDateTime updated_at;

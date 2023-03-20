@@ -42,7 +42,7 @@ public class Job implements Serializable {
     private String qualification;
 
     @ApiModelProperty(value = "工资")
-    private BigDecimal salary;
+    private String salary;
 
     @ApiModelProperty(value = "标签")
     private String tag;
@@ -50,21 +50,29 @@ public class Job implements Serializable {
     @ApiModelProperty(value = "公司id")
     private Integer company_id;
 
-    @ApiModelProperty(value = "公司名字")
+    @ApiModelProperty(value = "公司")
     @TableField(exist = false)
     private Company company;
 
-//    @ApiModelProperty(value = "公司简介")
-//    @TableField(exist = false)
-//    private String c_tag;
-//
-//    @ApiModelProperty(value = "公司规模")
-//    @TableField(exist = false)
-//    private String c_size;
-//
-//    @ApiModelProperty(value = "公司地址")
-//    @TableField(exist = false)
-//    private String c_address;
+    @ApiModelProperty(value = "公司名字")
+    @TableField(exist = false)
+    private String companyName;
+
+    @ApiModelProperty(value = "公司简介")
+    @TableField(exist = false)
+    private String companyTag;
+
+    @ApiModelProperty(value = "公司规模")
+    @TableField(exist = false)
+    private String companySize;
+
+    @ApiModelProperty(value = "公司地址")
+    @TableField(exist = false)
+    private String address;
+
+    @ApiModelProperty(value = "公司logo地址")
+    @TableField(exist = false)
+    private String companyIcon;
 
     private LocalDate posted_at;
 
