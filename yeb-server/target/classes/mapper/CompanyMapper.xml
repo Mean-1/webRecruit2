@@ -11,13 +11,16 @@
         <result column="address" property="address" />
         <result column="founded_at" property="founded_at" />
         <result column="tag" property="tag" />
+        <result column="icon" property="icon"/>
+        <result column="benefit" property="benefit"/>
+        <result column="type" property="type"/>
         <result column="created_at" property="created_at" />
         <result column="updated_at" property="updated_at" />
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        id, name, description, size, address, founded_at, tag, created_at, updated_at
+        id, name, description, size, address, founded_at, tag,icon, benefit,type, created_at, updated_at
     </sql>
 
 </mapper>
