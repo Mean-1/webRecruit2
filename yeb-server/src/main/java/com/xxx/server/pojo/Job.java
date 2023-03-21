@@ -12,6 +12,7 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import org.apache.catalina.User;
 
 /**
  * <p>
@@ -50,9 +51,19 @@ public class Job implements Serializable {
     @ApiModelProperty(value = "公司id")
     private Integer company_id;
 
+    @ApiModelProperty(value = "招聘者id")
+    private Integer user_id;
+
+    @ApiModelProperty(value = "招聘者身份")
+    private String interviewerDuty;
+
     @ApiModelProperty(value = "公司")
     @TableField(exist = false)
     private Company company;
+
+    @ApiModelProperty(value = "招聘者")
+    @TableField(exist = false)
+    private Users users;
 
     @ApiModelProperty(value = "公司名字")
     @TableField(exist = false)
