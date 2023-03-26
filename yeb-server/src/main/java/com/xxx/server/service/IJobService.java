@@ -24,6 +24,12 @@ public interface IJobService extends IService<Job> {
     List<Job> getAllJob();
 
     /**
+     * 获取少量job
+     * @return
+     */
+    List<Job> getLittleJob(String limit);
+
+    /**
      * 分页搜索职位
      * @param currentPage
      * @param size
@@ -31,4 +37,12 @@ public interface IJobService extends IService<Job> {
      * @return
      */
     RespPageBean getAllJobWithSearch(Integer currentPage, Integer size, JobSearchParam jobSearchParam);
+
+    /**
+     * 根据id查询职位信息
+     * @param id
+     * @param isDetail
+     * @return
+     */
+    Job getJobById(Integer id, Boolean isDetail);
 }

@@ -57,6 +57,9 @@ public class Company implements Serializable {
     @ApiModelProperty(value = "公司性质")
     private String type;
 
+    @ApiModelProperty(value = "公司网站")
+    private String website;
+
     private LocalDateTime created_at;
 
     private LocalDateTime updated_at;

@@ -57,6 +57,21 @@ public class Job implements Serializable {
     @ApiModelProperty(value = "招聘者身份")
     private String interviewerDuty;
 
+    @ApiModelProperty(value = "招聘需求人数")
+    private String recruit_num;
+
+    @ApiModelProperty(value = "职位描述")
+    private String description;
+
+    @ApiModelProperty(value = "工作需求")
+    private String requirement;
+
+    @ApiModelProperty(value = "工作需求")
+    private String benefit;
+
+    @ApiModelProperty(value = "附加信息")
+    private String attached_info;
+
     @ApiModelProperty(value = "公司")
     @TableField(exist = false)
     private Company company;
@@ -65,25 +80,6 @@ public class Job implements Serializable {
     @TableField(exist = false)
     private Users users;
 
-    @ApiModelProperty(value = "公司名字")
-    @TableField(exist = false)
-    private String companyName;
-
-    @ApiModelProperty(value = "公司简介")
-    @TableField(exist = false)
-    private String companyTag;
-
-    @ApiModelProperty(value = "公司规模")
-    @TableField(exist = false)
-    private String companySize;
-
-    @ApiModelProperty(value = "公司地址")
-    @TableField(exist = false)
-    private String address;
-
-    @ApiModelProperty(value = "公司logo地址")
-    @TableField(exist = false)
-    private String companyIcon;
 
     private LocalDate posted_at;
 

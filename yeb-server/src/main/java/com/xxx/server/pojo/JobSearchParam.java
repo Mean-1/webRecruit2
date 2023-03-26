@@ -36,7 +36,7 @@ public class JobSearchParam implements Serializable {
     private String qualification;
 
     @ApiModelProperty(value = "工资")
-    private BigDecimal salary;
+    private String salary;
 
     @ApiModelProperty(value = "公司规模")
     private String c_size;

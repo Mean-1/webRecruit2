@@ -14,6 +14,7 @@
         <result column="icon" property="icon"/>
         <result column="benefit" property="benefit"/>
         <result column="type" property="type"/>
+        <result column="website" property="website"/>
         <result column="created_at" property="created_at" />
         <result column="updated_at" property="updated_at" />
     </resultMap>

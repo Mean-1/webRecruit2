@@ -13,6 +13,11 @@
         <result column="company_id" property="company_id" />
         <result column="user_id" property="user_id" />
         <result column="interviewerDuty" property="interviewerDuty" />
+        <result column="recruit_num" property="recruit_num"/>
+        <result column="description" property="description"/>
+        <result column="requirement" property="requirement"/>
+        <result column="benefit" property="benefit"/>
+        <result column="attached_info" property="attached_info"/>
         <result column="posted_at" property="posted_at" />
         <result column="created_at" property="created_at" />
         <result column="updated_at" property="updated_at" />
@@ -31,6 +36,8 @@
             <result column="address" property="address"/>
             <result column="icon" property="icon"/>
             <result column="benefit" property="benefit"/>
+            <result column="type" property="type"/>
+            <result column="website" property="website"/>
         </collection>
 
     </resultMap>
@@ -81,10 +88,10 @@
             AND job.`qualification` =#{jobSearchParam.qualification}
         </if>
         <if test="null!=jobSearchParam.salary and ''!=jobSearchParam.salary">
-            AND job.`salary` =#{jobSearchParam.salary}
+            AND job.`salary` LIKE CONCAT('%',#{jobSearchParam.salary},'%')
         </if>
         <if test="null!=jobSearchParam.c_size and ''!=jobSearchParam.c_size">
-            AND company.`size` =jobSearchParam.c_size
+            AND company.`size` =#{jobSearchParam.c_size}
         </if>
         ORDER BY
             job.id
@@ -121,6 +128,102 @@
             1=1
         ORDER BY
             job.id
+    </select>
+
+<!--    获取少量job-->
+    <select id="getLittleJob" resultMap="getAllJobWithCompany">
+        SELECT
+            job.id,
+            job.NAME,
+            job.experience,
+            job.qualification,
+            job.salary,
+            job.tag,
+            job.posted_at,
+            job.created_at,
+            job.updated_at,
+            job.interviewerDuty,
+            company.id AS cid,
+            company.NAME AS cname,
+            company.tag AS ctag,
+            company.size,
+            company.address,
+            company.icon,
+            company.benefit,
+            users.id AS uid,
+            users.username
+        FROM
+            job
+                LEFT JOIN company ON job.company_id = company.id
+                LEFT JOIN users ON job.user_id = users.id
+
+        WHERE
+            1 = 1
+        ORDER BY
+	        job.id
+        LIMITE  #{a},#{limit}
+    </select>
+
+<!--    根据id查询job详细信息-->
+    <select id="getJobDetailById" resultMap="getAllJobWithCompany">
+        SELECT
+            job.id,
+            job.NAME,
+            job.experience,
+            job.qualification,
+            job.salary,
+            job.tag,
+            job.posted_at,
+            job.created_at,
+            job.updated_at,
+            job.interviewerDuty,
+            job.recruit_num,
+            job.description,
+            job.attached_info,
+            job.requirement,
+            job.benefit,
+            company.type,
+            company.website,
+            company.id AS cid,
+            company.NAME AS cname,
+            company.tag AS ctag,
+            company.size,
+            company.address,
+            company.icon,
+            company.benefit,
+            users.id AS uid,
+            users.username
+        FROM
+            job
+                LEFT JOIN company ON job.company_id = company.id
+                LEFT JOIN users ON job.user_id = users.id
+        WHERE
+            job.id = #{id}
+    </select>
+<!--根据id查询job少数信息-->
+    <select id="getJobById" resultMap="BaseResultMap">
+        SELECT
+            job.id,
+            job.NAME,
+            job.experience,
+            job.qualification,
+            job.salary,
+            job.tag,
+            job.recruit_num,
+            company.type,
+            company.website,
+            company.id AS cid,
+            company.NAME AS cname,
+            company.tag AS ctag,
+            company.size,
+            company.address,
+            company.icon,
+            company.benefit,
+        FROM
+            job
+                LEFT JOIN company ON job.company_id = company.id
+        WHERE
+            job.id = #{id}
     </select>
 
 </mapper>
