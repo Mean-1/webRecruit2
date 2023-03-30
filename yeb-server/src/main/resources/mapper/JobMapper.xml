@@ -27,6 +27,7 @@
         <collection property="users" ofType="com.xxx.server.pojo.Users">
             <id column="uid" property="id"/>
             <result column="username" property="username"/>
+            <result column="avatar_url" property="avatar_url"/>
         </collection>
         <collection property="company" ofType="com.xxx.server.pojo.Company">
             <id column="cid" property="id"/>
@@ -161,7 +162,7 @@
             1 = 1
         ORDER BY
 	        job.id
-        LIMITE  #{a},#{limit}
+        LIMIT  #{limit}
     </select>
 
 <!--    根据id查询job详细信息-->
@@ -224,6 +225,72 @@
                 LEFT JOIN company ON job.company_id = company.id
         WHERE
             job.id = #{id}
+    </select>
+<!--根据公司id查询job-->
+    <select id="getJobByCompanyId" resultMap="getAllJobWithCompany">
+        SELECT
+            job.id,
+            job.NAME,
+            job.experience,
+            job.qualification,
+            job.salary,
+            job.tag,
+            job.posted_at,
+            job.created_at,
+            job.updated_at,
+            job.interviewerDuty,
+            company.id AS cid,
+            company.address,
+            users.id AS uid,
+            users.username,
+            users.avatar_url
+        FROM
+            job
+                LEFT JOIN company ON job.company_id = company.id
+                LEFT JOIN users ON job.user_id = users.id
+        where
+            company.id=#{cid}
+        ORDER BY
+            job.id
+        limit 4;
+    </select>
+
+    <select id="getJobByPageWithCompanyId" resultMap="getAllJobWithCompany">
+        SELECT
+            job.id,
+            job.NAME,
+            job.salary,
+            job.experience,
+            job.qualification,
+            job.interviewerDuty,
+            company.address,
+            users.username,
+            users.avatar_url
+        FROM
+            job
+                LEFT JOIN company ON job.company_id = company.id
+                LEFT JOIN users ON job.user_id = users.id
+        WHERE
+            company.id = #{cid}
+
+        <if test="null!=company_jobSearchParam.search and ''!=company_jobSearchParam.search">
+            AND job.`name`LIKE CONCAT('%',#{company_jobSearchParam.search},'%')
+        </if>
+        <if test="null!=company_jobSearchParam.c_address and ''!=company_jobSearchParam.c_address">
+            AND company.`address` LIKE CONCAT('%',#{company_jobSearchParam.c_address},'%')
+        </if>
+        <if test="null!=company_jobSearchParam.experience and ''!=company_jobSearchParam.experience">
+            AND job.`experience` =#{company_jobSearchParam.experience}
+        </if>
+        <if test="null!=company_jobSearchParam.qualification and ''!=company_jobSearchParam.qualification">
+            AND job.`qualification` =#{company_jobSearchParam.qualification}
+        </if>
+        <if test="null!=company_jobSearchParam.salary and ''!=company_jobSearchParam.salary">
+            AND job.`salary` LIKE CONCAT('%',#{company_jobSearchParam.salary},'%')
+        </if>
+
+        ORDER BY
+            job.id
     </select>
 
 </mapper>

@@ -66,7 +66,7 @@ public class Job implements Serializable {
     @ApiModelProperty(value = "工作需求")
     private String requirement;
 
-    @ApiModelProperty(value = "工作需求")
+    @ApiModelProperty(value = "薪资福利")
     private String benefit;
 
     @ApiModelProperty(value = "附加信息")

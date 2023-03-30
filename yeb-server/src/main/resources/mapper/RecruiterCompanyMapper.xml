@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xxx.server.mapper.RecruiterCompanyMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.xxx.server.pojo.RecruiterCompany">
+        <id column="id" property="id" />
+        <result column="user_id" property="user_id" />
+        <result column="company_id" property="company_id" />
+        <result column="duty" property="duty" />
+    </resultMap>
+
+    <resultMap id="getInfoWithUserAndCompany" type="com.xxx.server.pojo.RecruiterCompany" extends="BaseResultMap">
+        <collection property="users" ofType="com.xxx.server.pojo.Users">
+            <result column="username" property="username"/>
+            <result column="gender" property="gender"/>
+        </collection>
+        <collection property="company" ofType="com.xxx.server.pojo.Company">
+            <result column="name" property="name"/>
+        </collection>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, user_id, company_id, duty
+    </sql>
+<!--    根据uid获得info-->
+    <select id="getInfo" resultMap="getInfoWithUserAndCompany">
+        select
+            u.username,
+            u.gender,
+            rc.duty,
+            c.name
+
+        from
+            recruiter_company rc
+                LEFT JOIN users u ON rc.user_id=u.id
+                LEFT JOIN company c ON rc.company_id=c.id
+        where
+            u.id=#{uid}
+
+    </select>
+<!--    更新招聘者的基本信息-->
+    <update id="updateInfo">
+        UPDATE
+            recruiter_company rc
+            LEFT JOIN users u ON rc.user_id = u.id
+            LEFT JOIN job j ON rc.user_id =j.user_id
+            SET
+                rc.company_id=#{cid},rc.duty=#{duty},u.username=#{username},u.gender=#{gender},j.company_id=#{cid}
+        where
+            rc.user_id=#{uid}
+    </update>
+    
+</mapper>

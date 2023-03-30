@@ -27,4 +27,5 @@ public interface UsersMapper extends BaseMapper<Users> {
      * @return
      */
     Integer addUser(@Param("username") String username,@Param("phone") String phone, @Param("password") String password,@Param("is_recruit")String is_recruit);
+
 }

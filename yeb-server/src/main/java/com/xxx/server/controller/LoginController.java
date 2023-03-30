@@ -35,7 +35,7 @@ public class LoginController {
         if(""==usersLoginParam.getCode()){
             return usersService.login(usersLoginParam.getPhone(),usersLoginParam.getPassword(),usersLoginParam.getCode(),request);
         }else if(usersLoginParam.getCode().equals("1")||usersLoginParam.getCode().equals("0")){
-            System.out.println(usersLoginParam.getCode()+"/");
+//            System.out.println(usersLoginParam.getCode()+"/");
             return usersService.register(usersLoginParam.getPhone(),usersLoginParam.getPassword(),usersLoginParam.getCode(),request);
         }
         System.out.println(usersLoginParam.getCode());

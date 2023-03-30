@@ -5,6 +5,7 @@ import java.time.LocalDateTime;
 import java.io.Serializable;
 
 import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -57,8 +58,23 @@ public class Company implements Serializable {
     @ApiModelProperty(value = "公司性质")
     private String type;
 
+    @ApiModelProperty(value = "公司介绍")
+    private String introduction;
+
     @ApiModelProperty(value = "公司网站")
     private String website;
+
+    @ApiModelProperty(value = "job实体类")
+    @TableField(exist = false)
+    private Job job;
+
+    @ApiModelProperty(value = "user实体类")
+    @TableField(exist = false)
+    private Users users;
+
+    @ApiModelProperty(value = "job数量")
+    @TableField(exist = false)
+    private Integer nums;
 
     private LocalDateTime created_at;
 

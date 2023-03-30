@@ -49,6 +49,8 @@ public class UsersServiceImpl extends ServiceImpl<UsersMapper, Users> implements
     @Value("${jwt.tokenHead}")
     private String tokenHead;
 
+
+
     /**
      * 登录判断
      * @param phone
@@ -125,4 +127,6 @@ public class UsersServiceImpl extends ServiceImpl<UsersMapper, Users> implements
         else
             return RespBean.error("添加失败");
     }
+
+
 }

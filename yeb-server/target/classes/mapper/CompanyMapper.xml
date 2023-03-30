@@ -14,9 +14,33 @@
         <result column="icon" property="icon"/>
         <result column="benefit" property="benefit"/>
         <result column="type" property="type"/>
+        <result column="introduction" property="introduction"/>
         <result column="website" property="website"/>
+        <result column="nums" property="nums"/>
         <result column="created_at" property="created_at" />
         <result column="updated_at" property="updated_at" />
+    </resultMap>
+
+    <resultMap id="getCompanyWithJob" type="com.xxx.server.pojo.Company" extends="BaseResultMap">
+        <collection property="job" ofType="com.xxx.server.pojo.Job">
+            <id column="jid" property="id"/>
+        </collection>
+    </resultMap>
+    
+    <resultMap id="getJobAndUserWithCompanyId" type="com.xxx.server.pojo.Company" extends="BaseResultMap">
+        <collection property="job" javaType="com.xxx.server.pojo.Job">
+            <id column="j_id" property="id"/>
+            <result column="j_name" property="name"/>
+            <result column="experience" property="experience"/>
+            <result column="qualification" property="qualification"/>
+            <result column="salary" property="salary"/>
+            <result column="interviewerDuty" property="interviewerDuty"/>
+        </collection>
+        <collection property="users" ofType="com.xxx.server.pojo.Users">
+            <id column="uid" property="id"/>
+            <result column="username" property="username"/>
+            <result column="avatar_url" property="avatar_url"/>
+        </collection>
     </resultMap>
 
     <!-- 通用查询结果列 -->
@@ -24,4 +48,100 @@
         id, name, description, size, address, founded_at, tag,icon, benefit,type, created_at, updated_at
     </sql>
 
+<!--    查询所有公司-->
+    <select id="getCompany" resultMap="getCompanyWithJob">
+        SELECT
+            company.id,
+            company.name,
+            company.tag,
+            company.size,
+            company.description,
+            company.icon,
+--             company.type,
+--             company.address,
+--             company.website,
+--             company.introduction,
+            job.id as jid,
+            count(job.id) AS nums
+        FROM
+            company
+                LEFT JOIN job ON job.company_id=company.id
+        where
+            1=1
+    </select>
+
+<!--    根据条件搜索公司的基本信息-->
+    <select id="getAllCompany" resultMap="BaseResultMap">
+        SELECT
+            company.id,
+            company.name,
+            company.tag,
+            company.size,
+            company.description,
+            company.icon
+--             company.address,
+--             company.type
+        FROM
+            company
+        WHERE
+            1=1
+        <if test="null!=companySearchParam.address and ''!=companySearchParam.address">
+            AND company.`address` LIKE CONCAT('%',#{companySearchParam.address},'%')
+        </if>
+        <if test="null!=companySearchParam.tag and ''!=companySearchParam.tag">
+            AND company.`tag` =#{companySearchParam.tag}
+        </if>
+        <if test="null!=companySearchParam.type and ''!=companySearchParam.type">
+            AND company.`type` =#{companySearchParam.type}
+        </if>
+        <if test="null!=companySearchParam.c_size and ''!=companySearchParam.c_size">
+            AND company.`size` LIKE CONCAT('%',#{companySearchParam.c_size},'%')
+        </if>
+
+        Order by
+            company.id
+    </select>
+
+<!--    根据公司id查询公司信息-->
+    <select id="getCompanyById" resultMap="getCompanyWithJob">
+        SELECT
+            company.id,
+            company.name,
+            company.tag,
+            company.size,
+            company.description,
+            company.icon,
+            company.type,
+            company.address,
+            company.website,
+            company.introduction,
+            job.id as jid,
+            count(job.id) AS nums
+        FROM
+            company
+                LEFT JOIN job ON job.company_id=company.id
+        where
+            company.id=#{id}
+    </select>
+    
+<!--    根据公司id查询job的基本信息-->
+    <select id="getJobByCompanyId" resultMap="getJobAndUserWithCompanyId">
+        SELECT
+            c.id,
+            job.id as j_id,
+            job.NAME as j_name,
+            job.experience,
+            job.qualification,
+            job.salary,
+            job.interviewerDuty
+
+        FROM
+            company c
+                LEFT JOIN job ON c.id= job.company_id
+        WHERE
+            c.id=#{cid}
+        ORDER BY
+            job.id
+
+    </select>
 </mapper>

@@ -64,7 +64,7 @@ mybatis-plus:
 
 logging:
   level:
-    com.xxx.server.mapper: debug
+    com.xxx.server.mapper: trace
 
 jwt:
   # Jwt存储的请求头
