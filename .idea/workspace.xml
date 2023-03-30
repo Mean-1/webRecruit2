@@ -4,58 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fc9a5970-1d55-489c-a4dc-626f59b53a0e" name="Changes" comment="4">
-      <change afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/controller/HistoryJobController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/controller/RecruiterCompanyController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/mapper/HistoryJobMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/mapper/RecruiterCompanyMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/pojo/CompanySearchParam.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/pojo/Company_jobSearchParam.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/pojo/HistoryJob.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/pojo/RecruiterCompany.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/pojo/UpdateRecruiterInfoParam.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/service/IHistoryJobService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/service/IRecruiterCompanyService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/service/impl/HistoryJobServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/service/impl/RecruiterCompanyServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yeb-server/src/main/resources/mapper/HistoryJobMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yeb-server/src/main/resources/mapper/RecruiterCompanyMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/controller/CompanyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/controller/CompanyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/controller/JobController.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/controller/JobController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/controller/UsersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/controller/UsersController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/mapper/CompanyMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/mapper/CompanyMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/mapper/JobMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/mapper/JobMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/mapper/UsersMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/mapper/UsersMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/pojo/Company.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/pojo/Company.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/pojo/Job.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/pojo/Job.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/service/ICompanyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/service/ICompanyService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/service/IJobService.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/service/IJobService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/service/IUsersService.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/service/IUsersService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/service/impl/CompanyServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/service/impl/CompanyServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/service/impl/JobServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/service/impl/JobServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/service/impl/UsersServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/service/impl/UsersServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/resources/config/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/resources/config/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/resources/mapper/CompanyMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/resources/mapper/CompanyMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/resources/mapper/JobMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/resources/mapper/JobMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yeb-server/target/classes/com/xxx/server/controller/CompanyController.class" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/target/classes/com/xxx/server/controller/CompanyController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yeb-server/target/classes/com/xxx/server/controller/JobController.class" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/target/classes/com/xxx/server/controller/JobController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yeb-server/target/classes/com/xxx/server/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/target/classes/com/xxx/server/controller/LoginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yeb-server/target/classes/com/xxx/server/controller/UsersController.class" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/target/classes/com/xxx/server/controller/UsersController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yeb-server/target/classes/com/xxx/server/mapper/CompanyMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/target/classes/com/xxx/server/mapper/CompanyMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yeb-server/target/classes/com/xxx/server/mapper/JobMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/target/classes/com/xxx/server/mapper/JobMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yeb-server/target/classes/com/xxx/server/pojo/Company.class" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/target/classes/com/xxx/server/pojo/Company.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yeb-server/target/classes/com/xxx/server/pojo/Job.class" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/target/classes/com/xxx/server/pojo/Job.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yeb-server/target/classes/com/xxx/server/service/ICompanyService.class" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/target/classes/com/xxx/server/service/ICompanyService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yeb-server/target/classes/com/xxx/server/service/IJobService.class" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/target/classes/com/xxx/server/service/IJobService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yeb-server/target/classes/com/xxx/server/service/impl/CompanyServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/target/classes/com/xxx/server/service/impl/CompanyServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yeb-server/target/classes/com/xxx/server/service/impl/JobServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/target/classes/com/xxx/server/service/impl/JobServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yeb-server/target/classes/com/xxx/server/service/impl/UsersServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/target/classes/com/xxx/server/service/impl/UsersServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yeb-server/target/classes/config/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/target/classes/config/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yeb-server/target/classes/mapper/CompanyMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/target/classes/mapper/CompanyMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yeb-server/target/classes/mapper/JobMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/target/classes/mapper/JobMapper.xml" afterDir="false" />
-    </list>
+    <list default="true" id="fc9a5970-1d55-489c-a4dc-626f59b53a0e" name="Changes" comment="5" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -478,7 +427,7 @@
       <workItem from="1680070354289" duration="8848000" />
       <workItem from="1680134615254" duration="18089000" />
       <workItem from="1680170059331" duration="62000" />
-      <workItem from="1680170313215" duration="290000" />
+      <workItem from="1680170313215" duration="828000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <created>1679241012417</created>
@@ -557,7 +506,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679793395565</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="5">
+      <created>1680170856684</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1680170856700</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -581,7 +537,8 @@
     <MESSAGE value="2" />
     <MESSAGE value="3" />
     <MESSAGE value="4" />
-    <option name="LAST_COMMIT_MESSAGE" value="4" />
+    <MESSAGE value="5" />
+    <option name="LAST_COMMIT_MESSAGE" value="5" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
