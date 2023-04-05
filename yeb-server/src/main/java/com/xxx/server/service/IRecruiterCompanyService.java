@@ -28,4 +28,7 @@ public interface IRecruiterCompanyService extends IService<RecruiterCompany> {
      * @return
      */
     RespBean updateInfo( UpdateRecruiterInfoParam updateRecruiterInfoParam);
+
+
+
 }

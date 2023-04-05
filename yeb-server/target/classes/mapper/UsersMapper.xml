@@ -24,5 +24,21 @@
     <insert id="addUser">
         insert into Users(username,phone,password,is_recruit) values(#{username},#{phone},#{password},#{is_recruit})
     </insert>
+<!--更新用户的账号-->
+    <update id="updatePhone">
+        update
+        users
+        set users.phone=#{phone}
+        where
+            users.id=#{id}
+    </update>
 
+<!--    更新用户的密码-->
+    <update id="updatePassword">
+        update
+            users
+        set users.password=#{newPassword}
+        where
+            users.id=#{id}
+    </update>
 </mapper>

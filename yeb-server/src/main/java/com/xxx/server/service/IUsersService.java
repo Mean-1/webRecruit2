@@ -44,4 +44,19 @@ public interface IUsersService extends IService<Users> {
     RespBean register(String phone, String password, String code, HttpServletRequest request);
 
 
+    /**
+     * 更新用户的phone
+     * @param id
+     * @param phone
+     * @return
+     */
+    RespBean updatePhone(Integer id, String phone);
+
+    /**
+     * 更新用户的密码
+     * @param id
+     * @param newPassword
+     * @return
+     */
+    RespBean updatePassword(Integer id, String newPassword);
 }

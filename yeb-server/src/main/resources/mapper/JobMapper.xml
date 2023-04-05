@@ -18,6 +18,7 @@
         <result column="requirement" property="requirement"/>
         <result column="benefit" property="benefit"/>
         <result column="attached_info" property="attached_info"/>
+        <result column="status" property="status"/>
         <result column="posted_at" property="posted_at" />
         <result column="created_at" property="created_at" />
         <result column="updated_at" property="updated_at" />
@@ -76,6 +77,7 @@
             LEFT JOIN users ON job.user_id = users.id
         where
             1=1
+          and job.status="0"
         <if test="null!=jobSearchParam.search and ''!=jobSearchParam.search">
             AND (company.`name` LIKE CONCAT('%',#{jobSearchParam.search},'%') or job.`name`LIKE CONCAT('%',#{jobSearchParam.search},'%'))
         </if>
@@ -127,8 +129,12 @@
             LEFT JOIN users ON job.user_id = users.id
         where
             1=1
+          and job.status="0"
+
         ORDER BY
             job.id
+        LIMIT  9
+
     </select>
 
 <!--    获取少量job-->
@@ -160,6 +166,7 @@
 
         WHERE
             1 = 1
+          and job.status="0"
         ORDER BY
 	        job.id
         LIMIT  #{limit}
@@ -183,6 +190,8 @@
             job.attached_info,
             job.requirement,
             job.benefit,
+            job.recruit_num,
+            job.status,
             company.type,
             company.website,
             company.id AS cid,
@@ -200,6 +209,9 @@
                 LEFT JOIN users ON job.user_id = users.id
         WHERE
             job.id = #{id}
+--           and job.status="0"
+
+
     </select>
 <!--根据id查询job少数信息-->
     <select id="getJobById" resultMap="BaseResultMap">
@@ -225,6 +237,8 @@
                 LEFT JOIN company ON job.company_id = company.id
         WHERE
             job.id = #{id}
+          and job.status="0"
+
     </select>
 <!--根据公司id查询job-->
     <select id="getJobByCompanyId" resultMap="getAllJobWithCompany">
@@ -252,9 +266,11 @@
             company.id=#{cid}
         ORDER BY
             job.id
+            and job.status="0"
+
         limit 4;
     </select>
-
+<!--根据公司id查询job信息(分页)-->
     <select id="getJobByPageWithCompanyId" resultMap="getAllJobWithCompany">
         SELECT
             job.id,
@@ -272,6 +288,7 @@
                 LEFT JOIN users ON job.user_id = users.id
         WHERE
             company.id = #{cid}
+        and job.status="0"
 
         <if test="null!=company_jobSearchParam.search and ''!=company_jobSearchParam.search">
             AND job.`name`LIKE CONCAT('%',#{company_jobSearchParam.search},'%')
@@ -292,5 +309,32 @@
         ORDER BY
             job.id
     </select>
+<!--根据招聘者id查询职位(分页)-->
+    <select id="getJobByRecruiterId" resultMap="getAllJobWithCompany">
+        select
+            job.*,
+            company.id,
+            company.address
+        from
+            job
+            left join company on job.company_id = company.id
+        where
+            job.user_id=#{uid}
+          and job.status=#{status}
+        <if test="0==con">
+            and job.posted_at &gt; #{date}
+        </if>
+        <if test="1==con">
+            and job.posted_at &lt; #{date}
+        </if>
 
+    </select>
+
+<!--    更新job状态-->
+
+    <update id="updateStatus">
+        update job
+        set job.status=#{status}
+        where job.id=#{id}
+    </update>
 </mapper>

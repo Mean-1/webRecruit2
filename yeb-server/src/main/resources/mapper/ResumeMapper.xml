@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xxx.server.mapper.ResumeMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.xxx.server.pojo.Resume">
+        <id column="id" property="id" />
+        <result column="baseinfo_id" property="baseinfo_id" />
+        <result column="education_id" property="education_id" />
+        <result column="experience_id" property="experience_id" />
+        <result column="intention_id" property="intention_id" />
+        <result column="projects_id" property="projects_id" />
+        <result column="selfevaluation_id" property="selfevaluation_id" />
+        <result column="skill_id" property="skill_id" />
+        <result column="created_at" property="created_at" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, baseinfo_id, education_id, experience_id, intention_id, projects_id, selfevaluation_id, skill_id, created_at
+    </sql>
+
+</mapper>

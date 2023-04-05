@@ -59,4 +59,6 @@ public class RecruiterCompanyServiceImpl extends ServiceImpl<RecruiterCompanyMap
 
         return RespBean.error("更新失败");
     }
+
+
 }

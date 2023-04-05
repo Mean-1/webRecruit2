@@ -16,7 +16,7 @@ import java.util.List;
 public interface IJobService extends IService<Job> {
 
     /**
-     * 查询所有职位
+     * 查询所有职位(限制9条)
      * @return
      */
     List<Job> getAllJob();
@@ -66,5 +66,23 @@ public interface IJobService extends IService<Job> {
      * @param job
      * @return
      */
-    RespBean addJob(Job job);
+    RespBean addJob(JobInsertParam job);
+
+    /**
+     * 根据招聘者id查询职位(分页)
+     * @param currentPage
+     * @param size
+     * @param uid
+     * @param status
+     * @return
+     */
+    RespPageBean getJobByRecruiterId(Integer currentPage, Integer size, Integer uid, String status,String condition);
+
+    /**
+     * 更新job状态
+     * @param selectedJobIds
+     * @param status
+     * @return
+     */
+    RespBean updateStatus(Integer[] selectedJobIds, String status);
 }

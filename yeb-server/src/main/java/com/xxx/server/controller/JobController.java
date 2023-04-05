@@ -1,6 +1,7 @@
 package com.xxx.server.controller;
 
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.xxx.server.pojo.*;
 import com.xxx.server.service.IJobService;
 import io.swagger.annotations.ApiOperation;
@@ -8,6 +9,7 @@ import io.swagger.models.auth.In;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -25,7 +27,7 @@ public class JobController {
     @Autowired
     private IJobService jobService;
 
-    @ApiOperation(value = "获取所有job")
+    @ApiOperation(value = "获取所有job(限制9条)")
     @GetMapping("/list")
     public List<Job> getAllJob(){
         return jobService.getAllJob();
@@ -74,10 +76,37 @@ public class JobController {
 //    以下的路径需要权限(登录后才能操作)
     @ApiOperation(value = "添加job")
     @PostMapping("/addJob")
-    public RespBean addJob(@RequestBody Job job){
+    public RespBean addJob(@RequestBody JobInsertParam job){
         return jobService.addJob(job);
     }
 
+    @ApiOperation(value = "根据招聘者id查询职位(分页)")
+    @GetMapping("/getJobByRecruiterId")
+    public RespPageBean getJobByRecruiterId(@RequestParam(defaultValue = "1") Integer currentPage,
+                                            @RequestParam(defaultValue = "10") Integer size,
+                                            @RequestParam Integer uid,//user id
+                                            @RequestParam String status,//job状态
+                                            @RequestParam String condition){//job时间
+        return jobService.getJobByRecruiterId(currentPage,size,uid,status,condition);
+    }
 
+    @ApiOperation(value = "更新job状态")
+    @PostMapping("/updateStatus")
+    public RespBean updateStatus(@RequestBody UpdateStatusParam updateStatusParam){
+        return jobService.updateStatus(updateStatusParam.getSelectedJobIds(),updateStatusParam.getStatus());
+    }
 
+    @ApiOperation(value = "删除job")
+    @DeleteMapping("/deleteJobByIds")
+    public RespBean deleteJobByIds(@RequestBody UpdateStatusParam updateStatusParam){
+        Integer [] idArray = updateStatusParam.getSelectedJobIds();
+        System.out.println(idArray);
+
+        if(null!=idArray && jobService.removeByIds(Arrays.asList(idArray))){
+            return RespBean.success("success");
+        }else{
+            return RespBean.error("error");
+        }
+
+    }
 }

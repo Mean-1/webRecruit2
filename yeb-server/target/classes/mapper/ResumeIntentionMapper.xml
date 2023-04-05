@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xxx.server.mapper.ResumeIntentionMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.xxx.server.pojo.ResumeIntention">
+        <id column="intention_id" property="intention_id" />
+        <result column="resume_id" property="resume_id" />
+        <result column="intention_duty" property="intention_duty" />
+        <result column="intention_type" property="intention_type" />
+        <result column="intention_city" property="intention_city" />
+        <result column="min_salary" property="min_salary" />
+        <result column="max_salary" property="max_salary" />
+        <result column="arrive_date" property="arrive_date" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        intention_id, resume_id, intention_duty, intention_type, intention_city, min_salary, max_salary, arrive_date
+    </sql>
+
+</mapper>

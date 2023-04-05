@@ -72,7 +72,8 @@ public class Users implements Serializable , UserDetails {
     private Timestamp created_at;
 
     @ApiModelProperty(value = "是否启用")
-//    @Getter(AccessLevel.NONE)//去除@Data 中的@Getter方法   但是如果其他地方在sql语句中调用这个实体类的时候，就会因为这里没有getter方法而失败
+//    @Getter(AccessLevel.NONE)//去除@Data 中的@Getter方法   但是如果其他地方在sql语句中调用这个实体类的时候，就会因为这里没有getter方法而失败 ,
+                            // 但是如果不加上这个就无法修改users里的数据了，因为isEnabled()方法和 getEnabled()冲突了
     private Boolean enabled;
 
 

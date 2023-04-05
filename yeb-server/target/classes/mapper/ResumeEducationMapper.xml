@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xxx.server.mapper.ResumeEducationMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.xxx.server.pojo.ResumeEducation">
+        <id column="education_id" property="education_id" />
+        <result column="resume_id" property="resume_id" />
+        <result column="school_name" property="school_name" />
+        <result column="education" property="education" />
+        <result column="start_date" property="start_date" />
+        <result column="end_date" property="end_date" />
+        <result column="major" property="major" />
+        <result column="examination_flag" property="examination_flag" />
+        <result column="fulltime_flag" property="fulltime_flag" />
+        <result column="honor" property="honor" />
+        <result column="certificate" property="certificate" />
+        <result column="attached_info" property="attached_info" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        education_id, resume_id, school_name, education, start_date, end_date, major, examination_flag, fulltime_flag, honor, certificate, attached_info
+    </sql>
+
+</mapper>

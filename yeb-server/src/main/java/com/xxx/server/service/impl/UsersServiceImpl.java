@@ -128,5 +128,39 @@ public class UsersServiceImpl extends ServiceImpl<UsersMapper, Users> implements
             return RespBean.error("添加失败");
     }
 
+    /**
+     * 更新用户的phone
+     * @param id
+     * @param phone
+     * @return
+     */
+    @Override
+    public RespBean updatePhone(Integer id, String phone) {
+        if(null!=id&&null!=phone){
+
+            if(1==usersMapper.updatePhone(id,phone)){
+                return RespBean.success("success");
+            }
+
+        }
+        return RespBean.error("更新失败");
+    }
+
+    /**
+     * 更新用户的密码
+     * @param id
+     * @param newPassword
+     * @return
+     */
+    @Override
+    public RespBean updatePassword(Integer id, String newPassword) {
+        if(null!=id&&null!=newPassword){
+            if(1==usersMapper.updatePassword(id,passwordEncoder.encode(newPassword))){
+                return RespBean.success("success");
+            }
+        }
+        return RespBean.error("更新失败");
+    }
+
 
 }

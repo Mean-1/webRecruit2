@@ -6,9 +6,11 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.xxx.server.pojo.Company_jobSearchParam;
 import com.xxx.server.pojo.Job;
 import com.xxx.server.pojo.JobSearchParam;
+import io.swagger.models.auth.In;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.security.core.parameters.P;
 
+import java.time.LocalDate;
 import java.util.List;
 
 /**
@@ -71,4 +73,22 @@ public interface JobMapper extends BaseMapper<Job> {
      * @return
      */
     IPage<Job> getJobByPageWithCompanyId(Page<Job> page,@Param("cid") Integer cid,@Param("company_jobSearchParam") Company_jobSearchParam company_jobSearchParam);
+
+    /**
+     * 根据招聘者id查询职位(分页)
+     * @param page
+     * @param uid
+     * @param status
+     * @return
+     */
+    IPage<Job> getJobByRecruiterId(Page<Job> page, @Param("uid") Integer uid, @Param("status") String status ,
+                                   @Param("date")LocalDate date, @Param("con")Integer con);
+
+    /**
+     * 更新job状态
+     * @param id
+     * @param status
+     * @return
+     */
+    int updateStatus(@Param("id") Integer id,@Param("status") String status);
 }

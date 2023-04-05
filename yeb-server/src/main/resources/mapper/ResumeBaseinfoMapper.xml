@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xxx.server.mapper.ResumeBaseinfoMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.xxx.server.pojo.ResumeBaseinfo">
+        <id column="id" property="id" />
+        <result column="resume_id" property="resume_id" />
+        <result column="applicant_avatar" property="applicant_avatar" />
+        <result column="applicant_name" property="applicant_name" />
+        <result column="applicant_sex" property="applicant_sex" />
+        <result column="applicant_age" property="applicant_age" />
+        <result column="applicant_identity" property="applicant_identity" />
+        <result column="working_year" property="working_year" />
+        <result column="applicant_education" property="applicant_education" />
+        <result column="applicant_tel" property="applicant_tel" />
+        <result column="applicant_email" property="applicant_email" />
+        <result column="applicant_city" property="applicant_city" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, resume_id, applicant_avatar, applicant_name, applicant_sex, applicant_age, applicant_identity, working_year, applicant_education, applicant_tel, applicant_email, applicant_city
+    </sql>
+
+</mapper>

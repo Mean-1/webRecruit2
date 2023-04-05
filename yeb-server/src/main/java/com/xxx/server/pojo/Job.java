@@ -87,5 +87,8 @@ public class Job implements Serializable {
 
     private LocalDateTime updated_at;
 
+    @ApiModelProperty(value = "状态")
+    private String status;//0——已上线  1——草稿箱   2————已下线
+
 
 }

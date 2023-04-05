@@ -28,4 +28,19 @@ public interface UsersMapper extends BaseMapper<Users> {
      */
     Integer addUser(@Param("username") String username,@Param("phone") String phone, @Param("password") String password,@Param("is_recruit")String is_recruit);
 
+    /**
+     * 更新用户的phone
+     * @param id
+     * @param phone
+     * @return
+     */
+    int updatePhone(@Param("id") Integer id, @Param("phone") String phone);
+
+    /**
+     * 更新用户的password
+     * @param id
+     * @param newPassword
+     * @return
+     */
+    int updatePassword(@Param("id") Integer id,@Param("newPassword") String newPassword);
 }
