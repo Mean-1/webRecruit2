@@ -1,9 +1,14 @@
 package com.xxx.server.controller;
 
 
-import org.springframework.web.bind.annotation.RequestMapping;
-
-import org.springframework.web.bind.annotation.RestController;
+import com.xxx.server.pojo.RespBean;
+import com.xxx.server.pojo.ResumeEducation;
+import com.xxx.server.pojo.ResumeIntention;
+import com.xxx.server.service.IResumeEducationService;
+import com.xxx.server.service.IResumeIntentionService;
+import io.swagger.annotations.ApiOperation;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * <p>
@@ -16,5 +21,25 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/resume-intention")
 public class ResumeIntentionController {
+
+    @Autowired
+    private IResumeIntentionService resumeIntentionService;
+
+    @ApiOperation("根据resume_id获取intention")
+    @GetMapping("/getIntentionByResumeId/{resume_id}")
+    public RespBean getIntentionByResumeId(@PathVariable Integer resume_id){
+
+        return resumeIntentionService.getEducationByResumeId(resume_id);
+    }
+
+    @ApiOperation("更新或添加education")
+    @PostMapping("/saveOrUpdate")
+    public RespBean saveOrUpdate(@RequestBody ResumeIntention resumeIntention){
+
+        if(true==resumeIntentionService.saveOrUpdate(resumeIntention)){
+            return RespBean.success("success");
+        }
+        return RespBean.error("error");
+    }
 
 }

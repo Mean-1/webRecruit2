@@ -4,85 +4,49 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fc9a5970-1d55-489c-a4dc-626f59b53a0e" name="Changes" comment="5">
-      <change afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/controller/ResumeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/controller/UserResumeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/mapper/ResumeBaseinfoMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/mapper/ResumeEducationMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/mapper/ResumeExperienceMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/mapper/ResumeIntentionMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/mapper/ResumeMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/mapper/ResumeProjectsMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/mapper/ResumeSelfevaluationMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/mapper/ResumeSkillMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/mapper/UserResumeMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/pojo/JobInsertParam.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/pojo/Resume.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/pojo/ResumeBaseinfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/pojo/ResumeEducation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/pojo/ResumeExperience.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/pojo/ResumeIntention.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/pojo/ResumeProjects.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/pojo/ResumeSelfevaluation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/pojo/ResumeSkill.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/pojo/UpdateStatusParam.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/pojo/UserResume.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/service/IResumeBaseinfoService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/service/IResumeEducationService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/service/IResumeExperienceService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/service/IResumeIntentionService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/service/IResumeProjectsService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/service/IResumeSelfevaluationService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/service/IResumeService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/service/IResumeSkillService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/service/IUserResumeService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/service/impl/ResumeBaseinfoServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/service/impl/ResumeEducationServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/service/impl/ResumeExperienceServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/service/impl/ResumeIntentionServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/service/impl/ResumeProjectsServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/service/impl/ResumeSelfevaluationServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/service/impl/ResumeServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/service/impl/ResumeSkillServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/service/impl/UserResumeServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yeb-server/src/main/resources/mapper/ResumeBaseinfoMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yeb-server/src/main/resources/mapper/ResumeEducationMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yeb-server/src/main/resources/mapper/ResumeExperienceMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yeb-server/src/main/resources/mapper/ResumeIntentionMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yeb-server/src/main/resources/mapper/ResumeMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yeb-server/src/main/resources/mapper/ResumeProjectsMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yeb-server/src/main/resources/mapper/ResumeSelfevaluationMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yeb-server/src/main/resources/mapper/ResumeSkillMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yeb-server/src/main/resources/mapper/UserResumeMapper.xml" afterDir="false" />
+    <list default="true" id="fc9a5970-1d55-489c-a4dc-626f59b53a0e" name="Changes" comment="6">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yeb-generator/src/main/java/com/xxx/server/generator/CodeGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-generator/src/main/java/com/xxx/server/generator/CodeGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/controller/JobController.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/controller/JobController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/controller/UsersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/controller/UsersController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/mapper/JobMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/mapper/JobMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/mapper/UsersMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/mapper/UsersMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/pojo/Job.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/pojo/Job.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/pojo/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/pojo/Users.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/service/IJobService.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/service/IJobService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/service/IRecruiterCompanyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/service/IRecruiterCompanyService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/service/IUsersService.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/service/IUsersService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/service/impl/JobServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/service/impl/JobServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/service/impl/RecruiterCompanyServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/service/impl/RecruiterCompanyServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/service/impl/UsersServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/service/impl/UsersServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/resources/mapper/JobMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/resources/mapper/JobMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/resources/mapper/RecruiterCompanyMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/resources/mapper/RecruiterCompanyMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/resources/mapper/UsersMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/resources/mapper/UsersMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yeb-server/target/classes/com/xxx/server/controller/JobController.class" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/target/classes/com/xxx/server/controller/JobController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yeb-server/target/classes/com/xxx/server/controller/UsersController.class" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/target/classes/com/xxx/server/controller/UsersController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yeb-server/target/classes/com/xxx/server/mapper/JobMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/target/classes/com/xxx/server/mapper/JobMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yeb-server/target/classes/com/xxx/server/mapper/UsersMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/target/classes/com/xxx/server/mapper/UsersMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yeb-server/target/classes/com/xxx/server/pojo/Job.class" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/target/classes/com/xxx/server/pojo/Job.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yeb-server/target/classes/com/xxx/server/pojo/Users.class" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/target/classes/com/xxx/server/pojo/Users.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yeb-server/target/classes/com/xxx/server/service/IJobService.class" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/target/classes/com/xxx/server/service/IJobService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yeb-server/target/classes/com/xxx/server/service/IUsersService.class" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/target/classes/com/xxx/server/service/IUsersService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yeb-server/target/classes/com/xxx/server/service/impl/JobServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/target/classes/com/xxx/server/service/impl/JobServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yeb-server/target/classes/com/xxx/server/service/impl/UsersServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/target/classes/com/xxx/server/service/impl/UsersServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yeb-server/target/classes/mapper/JobMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/target/classes/mapper/JobMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yeb-server/target/classes/mapper/UsersMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/target/classes/mapper/UsersMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/controller/ResumeBaseinfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/controller/ResumeBaseinfoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/controller/ResumeEducationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/controller/ResumeEducationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/controller/ResumeExperienceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/controller/ResumeExperienceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/controller/ResumeIntentionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/controller/ResumeIntentionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/controller/ResumeProjectsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/controller/ResumeProjectsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/controller/ResumeSelfevaluationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/controller/ResumeSelfevaluationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/controller/ResumeSkillController.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/controller/ResumeSkillController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/controller/UserResumeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/controller/UserResumeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/pojo/UserResume.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/pojo/UserResume.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/service/IResumeBaseinfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/service/IResumeBaseinfoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/service/IResumeEducationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/service/IResumeEducationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/service/IResumeExperienceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/service/IResumeExperienceService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/service/IResumeIntentionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/service/IResumeIntentionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/service/IResumeProjectsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/service/IResumeProjectsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/service/IResumeSelfevaluationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/service/IResumeSelfevaluationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/service/IResumeSkillService.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/service/IResumeSkillService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/service/IUserResumeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/service/IUserResumeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/service/impl/ResumeBaseinfoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/service/impl/ResumeBaseinfoServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/service/impl/ResumeEducationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/service/impl/ResumeEducationServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/service/impl/ResumeExperienceServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/service/impl/ResumeExperienceServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/service/impl/ResumeIntentionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/service/impl/ResumeIntentionServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/service/impl/ResumeProjectsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/service/impl/ResumeProjectsServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/service/impl/ResumeSelfevaluationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/service/impl/ResumeSelfevaluationServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/service/impl/ResumeSkillServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/service/impl/ResumeSkillServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/service/impl/UserResumeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/xxx/server/service/impl/UserResumeServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/target/classes/com/xxx/server/controller/ResumeBaseinfoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/target/classes/com/xxx/server/controller/ResumeBaseinfoController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/target/classes/com/xxx/server/controller/ResumeEducationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/target/classes/com/xxx/server/controller/ResumeEducationController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/target/classes/com/xxx/server/controller/ResumeExperienceController.class" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/target/classes/com/xxx/server/controller/ResumeExperienceController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/target/classes/com/xxx/server/controller/ResumeIntentionController.class" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/target/classes/com/xxx/server/controller/ResumeIntentionController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/target/classes/com/xxx/server/controller/UserResumeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/target/classes/com/xxx/server/controller/UserResumeController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/target/classes/com/xxx/server/pojo/UserResume.class" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/target/classes/com/xxx/server/pojo/UserResume.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/target/classes/com/xxx/server/service/IResumeBaseinfoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/target/classes/com/xxx/server/service/IResumeBaseinfoService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/target/classes/com/xxx/server/service/IResumeEducationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/target/classes/com/xxx/server/service/IResumeEducationService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/target/classes/com/xxx/server/service/IResumeExperienceService.class" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/target/classes/com/xxx/server/service/IResumeExperienceService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/target/classes/com/xxx/server/service/IResumeIntentionService.class" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/target/classes/com/xxx/server/service/IResumeIntentionService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/target/classes/com/xxx/server/service/IUserResumeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/target/classes/com/xxx/server/service/IUserResumeService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/target/classes/com/xxx/server/service/impl/ResumeBaseinfoServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/target/classes/com/xxx/server/service/impl/ResumeBaseinfoServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/target/classes/com/xxx/server/service/impl/ResumeEducationServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/target/classes/com/xxx/server/service/impl/ResumeEducationServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/target/classes/com/xxx/server/service/impl/ResumeExperienceServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/target/classes/com/xxx/server/service/impl/ResumeExperienceServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/target/classes/com/xxx/server/service/impl/ResumeIntentionServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/target/classes/com/xxx/server/service/impl/ResumeIntentionServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/target/classes/com/xxx/server/service/impl/UserResumeServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/target/classes/com/xxx/server/service/impl/UserResumeServiceImpl.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -206,7 +170,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Application.CodeGenerator (1)">
+  <component name="RunManager" selected="Spring Boot.YebApplication">
     <configuration name="CodeGenerator (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.xxx.server.generator.CodeGenerator" />
       <module name="yeb-generator" />
@@ -295,8 +259,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.CodeGenerator (1)" />
         <item itemvalue="Spring Boot.YebApplication" />
+        <item itemvalue="Application.CodeGenerator (1)" />
         <item itemvalue="Application.CodeGenerator" />
         <item itemvalue="Spring Boot.MailApplication" />
         <item itemvalue="JUnit.test1.test" />
@@ -515,7 +479,8 @@
       <workItem from="1680496848832" duration="6507000" />
       <workItem from="1680537215633" duration="630000" />
       <workItem from="1680567430487" duration="14490000" />
-      <workItem from="1680677760504" duration="1759000" />
+      <workItem from="1680677760504" duration="7426000" />
+      <workItem from="1680702502147" duration="718000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <created>1679241012417</created>
@@ -608,7 +573,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680171445458</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="6">
+      <created>1680679939491</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1680679939491</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -633,7 +605,8 @@
     <MESSAGE value="3" />
     <MESSAGE value="4" />
     <MESSAGE value="5" />
-    <option name="LAST_COMMIT_MESSAGE" value="5" />
+    <MESSAGE value="6" />
+    <option name="LAST_COMMIT_MESSAGE" value="6" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

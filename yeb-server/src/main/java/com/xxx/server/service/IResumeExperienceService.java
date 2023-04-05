@@ -1,5 +1,6 @@
 package com.xxx.server.service;
 
+import com.xxx.server.pojo.RespBean;
 import com.xxx.server.pojo.ResumeExperience;
 import com.baomidou.mybatisplus.extension.service.IService;
 
@@ -13,4 +14,10 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IResumeExperienceService extends IService<ResumeExperience> {
 
+    /**
+     * 根据resume_id获取experience
+     * @param resume_id
+     * @return
+     */
+    RespBean getExperienceByResumeId(Integer resume_id);
 }

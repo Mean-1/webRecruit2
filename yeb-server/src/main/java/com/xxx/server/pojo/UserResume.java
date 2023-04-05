@@ -1,5 +1,6 @@
 package com.xxx.server.pojo;
 
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
 import java.io.Serializable;
 
@@ -34,9 +35,11 @@ public class UserResume implements Serializable {
     private Integer resume_id;
 
     @ApiModelProperty(value = "users")
+    @TableField(exist = false)
     private Users users;
 
     @ApiModelProperty(value = "resume")
+    @TableField(exist = false)
     private Resume resume;
 
 

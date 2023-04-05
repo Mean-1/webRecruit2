@@ -1,5 +1,6 @@
 package com.xxx.server.service;
 
+import com.xxx.server.pojo.RespBean;
 import com.xxx.server.pojo.ResumeSelfevaluation;
 import com.baomidou.mybatisplus.extension.service.IService;
 
@@ -13,4 +14,10 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IResumeSelfevaluationService extends IService<ResumeSelfevaluation> {
 
+    /**
+     * 根据resume_id获取SelfEvaluation
+     * @param resume_id
+     * @return
+     */
+    RespBean getEducationByResumeId(Integer resume_id);
 }

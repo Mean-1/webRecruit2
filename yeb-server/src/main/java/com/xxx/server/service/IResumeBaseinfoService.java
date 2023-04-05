@@ -1,5 +1,6 @@
 package com.xxx.server.service;
 
+import com.xxx.server.pojo.RespBean;
 import com.xxx.server.pojo.ResumeBaseinfo;
 import com.baomidou.mybatisplus.extension.service.IService;
 
@@ -13,4 +14,10 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IResumeBaseinfoService extends IService<ResumeBaseinfo> {
 
+    /**
+     * 根据resume_id获取baseinfo
+     * @param resume_id
+     * @return
+     */
+    RespBean getBaseInfoByResumeId(Integer resume_id);
 }

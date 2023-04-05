@@ -1,9 +1,12 @@
 package com.xxx.server.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.xxx.server.pojo.RespBean;
 import com.xxx.server.pojo.ResumeExperience;
 import com.xxx.server.mapper.ResumeExperienceMapper;
 import com.xxx.server.service.IResumeExperienceService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -17,4 +20,21 @@ import org.springframework.stereotype.Service;
 @Service
 public class ResumeExperienceServiceImpl extends ServiceImpl<ResumeExperienceMapper, ResumeExperience> implements IResumeExperienceService {
 
+    @Autowired
+    private ResumeExperienceMapper resumeExperienceMapper;
+
+
+    /**
+     * 根据resume_id获取experience
+     * @param resume_id
+     * @return
+     */
+    @Override
+    public RespBean getExperienceByResumeId(Integer resume_id) {
+        ResumeExperience resumeExperience = resumeExperienceMapper.selectOne(new QueryWrapper<ResumeExperience>().eq("resume_id", resume_id));
+        if(null!=resumeExperience){
+            return RespBean.success("success",resumeExperience);
+        }
+        return RespBean.error("error");
+    }
 }

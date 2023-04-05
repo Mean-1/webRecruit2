@@ -13,4 +13,10 @@ import com.xxx.server.pojo.UserResume;
  */
 public interface IUserResumeService extends IService<UserResume> {
 
+    /**
+     * 根据uid查询rid
+     * @param uid
+     * @return
+     */
+    Integer getRidByUid(Integer uid);
 }
