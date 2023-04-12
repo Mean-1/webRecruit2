@@ -29,10 +29,10 @@ public class ResumeProjectsController {
     @GetMapping("/getProjectsByResumeId/{resume_id}")
     public RespBean getProjectsByResumeId(@PathVariable Integer resume_id){
 
-        return resumeProjectsService.getEducationByResumeId(resume_id);
+        return resumeProjectsService.getProjectsByResumeId(resume_id);
     }
 
-    @ApiOperation("更新或添加education")
+    @ApiOperation("更新或添加project")
     @PostMapping("/saveOrUpdate")
     public RespBean saveOrUpdate(@RequestBody ResumeProjects resumeProjects){
 
@@ -40,6 +40,12 @@ public class ResumeProjectsController {
             return RespBean.success("success");
         }
         return RespBean.error("error");
+    }
+
+    @ApiOperation("删除project")
+    @DeleteMapping("/deleteById/{id}")
+    public RespBean deleteById(@PathVariable Integer id){
+        return resumeProjectsService.deleteById(id);
     }
 
 }

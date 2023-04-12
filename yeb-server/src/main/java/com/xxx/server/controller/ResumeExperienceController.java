@@ -32,7 +32,7 @@ public class ResumeExperienceController {
         return resumeExperienceService.getExperienceByResumeId(resume_id);
     }
 
-    @ApiOperation("更新或添加education")
+    @ApiOperation("更新或添加experience")
     @PostMapping("/saveOrUpdate")
     public RespBean saveOrUpdate(@RequestBody ResumeExperience resumeExperience){
 
@@ -40,5 +40,11 @@ public class ResumeExperienceController {
             return RespBean.success("success");
         }
         return RespBean.error("error");
+    }
+
+    @ApiOperation("删除experience")
+    @DeleteMapping("/deleteById/{id}")
+    public RespBean deleteById(@PathVariable Integer id){
+        return resumeExperienceService.deleteById(id);
     }
 }

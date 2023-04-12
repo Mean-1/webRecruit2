@@ -52,7 +52,7 @@ public class JobController {
 
     @ApiOperation(value = "根据工作id获取job")
     @GetMapping("/info")
-    public Job getJobById(@RequestParam String id ,@RequestParam Boolean isDetail){
+    public RespBean getJobById(@RequestParam String id ,@RequestParam Boolean isDetail){
         Integer job_id = Integer.parseInt(id);
         return jobService.getJobById(job_id,isDetail);
     }
@@ -93,13 +93,13 @@ public class JobController {
     @ApiOperation(value = "更新job状态")
     @PostMapping("/updateStatus")
     public RespBean updateStatus(@RequestBody UpdateStatusParam updateStatusParam){
-        return jobService.updateStatus(updateStatusParam.getSelectedJobIds(),updateStatusParam.getStatus());
+        return jobService.updateStatus(updateStatusParam.getSelectedIds(),updateStatusParam.getStatus());
     }
 
     @ApiOperation(value = "删除job")
     @DeleteMapping("/deleteJobByIds")
     public RespBean deleteJobByIds(@RequestBody UpdateStatusParam updateStatusParam){
-        Integer [] idArray = updateStatusParam.getSelectedJobIds();
+        Integer [] idArray = updateStatusParam.getSelectedIds();
         System.out.println(idArray);
 
         if(null!=idArray && jobService.removeByIds(Arrays.asList(idArray))){

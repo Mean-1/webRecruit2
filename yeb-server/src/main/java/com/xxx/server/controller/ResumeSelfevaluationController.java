@@ -32,7 +32,7 @@ public class ResumeSelfevaluationController {
         return resumeSelfevaluationService.getEducationByResumeId(resume_id);
     }
 
-    @ApiOperation("更新或添加education")
+    @ApiOperation("更新或添加selfEvaluation")
     @PostMapping("/saveOrUpdate")
     public RespBean saveOrUpdate(@RequestBody ResumeSelfevaluation resumeSelfevaluation){
 
@@ -41,5 +41,6 @@ public class ResumeSelfevaluationController {
         }
         return RespBean.error("error");
     }
+
 
 }

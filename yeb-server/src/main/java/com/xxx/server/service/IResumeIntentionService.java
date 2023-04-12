@@ -20,4 +20,11 @@ public interface IResumeIntentionService extends IService<ResumeIntention> {
      * @return
      */
     RespBean getEducationByResumeId(Integer resume_id);
+
+    /**
+     * 删除Intention
+     * @param id
+     * @return
+     */
+    RespBean deleteById(Integer id);
 }

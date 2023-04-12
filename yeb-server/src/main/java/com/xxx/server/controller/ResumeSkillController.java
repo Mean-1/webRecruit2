@@ -32,7 +32,7 @@ public class ResumeSkillController {
         return resumeSkillService.getEducationByResumeId(resume_id);
     }
 
-    @ApiOperation("更新或添加education")
+    @ApiOperation("更新或添加skill")
     @PostMapping("/saveOrUpdate")
     public RespBean saveOrUpdate(@RequestBody ResumeSkill resumeSkill){
 
@@ -40,6 +40,11 @@ public class ResumeSkillController {
             return RespBean.success("success");
         }
         return RespBean.error("error");
+    }
+    @ApiOperation("删除skill")
+    @DeleteMapping("/deleteById/{id}")
+    public RespBean deleteById(@PathVariable Integer id){
+        return resumeSkillService.deleteById(id);
     }
 
 }

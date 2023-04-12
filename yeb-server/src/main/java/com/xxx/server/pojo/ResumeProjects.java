@@ -1,5 +1,7 @@
 package com.xxx.server.pojo;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import java.time.LocalDate;
 import java.io.Serializable;
@@ -24,6 +26,7 @@ public class ResumeProjects implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
+    @TableId(value = "project_id", type = IdType.AUTO)
     private Integer project_id;
 
     private Integer resume_id;
@@ -36,9 +39,9 @@ public class ResumeProjects implements Serializable {
 
     private String duty_description;
 
-    private LocalDate start_date;
+    private String start_date;
 
-    private LocalDate end_date;
+    private String end_date;
 
     private String project_url;
 

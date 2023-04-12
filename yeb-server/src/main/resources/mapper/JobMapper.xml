@@ -172,7 +172,7 @@
         LIMIT  #{limit}
     </select>
 
-<!--    根据id查询job详细信息-->
+<!--    根据id查询job不需要判断下线-->
     <select id="getJobDetailById" resultMap="getAllJobWithCompany">
         SELECT
             job.id,
@@ -213,8 +213,8 @@
 
 
     </select>
-<!--根据id查询job少数信息-->
-    <select id="getJobById" resultMap="BaseResultMap">
+<!--根据id查询job需要判断下线-->
+    <select id="getJobById" resultMap="getAllJobWithCompany">
         SELECT
             job.id,
             job.NAME,
@@ -222,7 +222,17 @@
             job.qualification,
             job.salary,
             job.tag,
+            job.posted_at,
+            job.created_at,
+            job.updated_at,
+            job.interviewerDuty,
             job.recruit_num,
+            job.description,
+            job.attached_info,
+            job.requirement,
+            job.benefit,
+            job.recruit_num,
+            job.status,
             company.type,
             company.website,
             company.id AS cid,
@@ -232,9 +242,12 @@
             company.address,
             company.icon,
             company.benefit,
+            users.id AS uid,
+            users.username
         FROM
             job
                 LEFT JOIN company ON job.company_id = company.id
+                LEFT JOIN users ON job.user_id = users.id
         WHERE
             job.id = #{id}
           and job.status="0"
@@ -264,9 +277,10 @@
                 LEFT JOIN users ON job.user_id = users.id
         where
             company.id=#{cid}
+            and job.status="0"
         ORDER BY
             job.id
-            and job.status="0"
+
 
         limit 4;
     </select>

@@ -32,7 +32,7 @@ public class ResumeIntentionController {
         return resumeIntentionService.getEducationByResumeId(resume_id);
     }
 
-    @ApiOperation("更新或添加education")
+    @ApiOperation("更新或添加Intention")
     @PostMapping("/saveOrUpdate")
     public RespBean saveOrUpdate(@RequestBody ResumeIntention resumeIntention){
 
@@ -40,6 +40,12 @@ public class ResumeIntentionController {
             return RespBean.success("success");
         }
         return RespBean.error("error");
+    }
+
+    @ApiOperation("删除Intention")
+    @DeleteMapping("/deleteById/{id}")
+    public RespBean deleteById(@PathVariable Integer id){
+        return resumeIntentionService.deleteById(id);
     }
 
 }

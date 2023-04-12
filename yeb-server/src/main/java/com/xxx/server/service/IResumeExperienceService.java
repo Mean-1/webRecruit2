@@ -20,4 +20,11 @@ public interface IResumeExperienceService extends IService<ResumeExperience> {
      * @return
      */
     RespBean getExperienceByResumeId(Integer resume_id);
+
+    /**
+     * 删除experience
+     * @param id
+     * @return
+     */
+    RespBean deleteById(Integer id);
 }

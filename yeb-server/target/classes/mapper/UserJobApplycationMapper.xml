@@ -7,6 +7,55 @@
         <id column="id" property="id" />
         <result column="user_id" property="user_id" />
         <result column="job_id" property="job_id" />
+        <result column="create_date" property="create_date"/>
+        <result column="state" property="state"/>
+    </resultMap>
+
+    <resultMap id="getApplyJobInfoByOthers" type="com.xxx.server.pojo.UserJobApplycation" extends="BaseResultMap">
+        <collection property="job" ofType="com.xxx.server.pojo.Job">
+            <id column="jid" property="id"/>
+            <result column="jname" property="name"/>
+            <result column="salary" property="salary"/>
+            <result column="qualification" property="qualification"/>
+            <result column="experience" property="experience"/>
+        </collection>
+        <collection property="company" ofType="com.xxx.server.pojo.Company">
+            <id column="cid" property="id"/>
+            <result column="cname" property="name"/>
+            <result column="address" property="address"/>
+            <result column="tag" property="tag"/>
+            <result column="type" property="type"/>
+            <result column="size" property="size"/>
+            <result column="icon" property="icon"/>
+        </collection>
+    </resultMap>
+    <resultMap id="getAllResumeByOthers" type="com.xxx.server.pojo.UserJobApplycation" extends="BaseResultMap">
+        <collection property="job" ofType="com.xxx.server.pojo.Job">
+            <id column="jid" property="id"/>
+            <result column="name" property="name"/>
+            <result column="salary" property="salary"/>
+            <result column="experience" property="experience"/>
+            <result column="qualification" property="qualification"/>
+        </collection>
+        <collection property="user_resume" ofType="com.xxx.server.pojo.UserResume"/>
+
+        <collection property="resume" ofType="com.xxx.server.pojo.Resume">
+            <id column="rid" property="id"/>
+        </collection>
+        <collection property="resume_baseinfo" ofType="com.xxx.server.pojo.ResumeBaseinfo">
+            <result column="applicant_avatar" property="applicant_avatar"/>
+            <result column="applicant_name" property="applicant_name"/>
+            <result column="applicant_sex" property="applicant_sex"/>
+            <result column="applicant_age" property="applicant_age"/>
+            <result column="applicant_identity" property="applicant_identity"/>
+            <result column="working_year" property="working_year"/>
+            <result column="applicant_education" property="applicant_education"/>
+            <result column="applicant_city" property="applicant_city"/>
+        </collection>
+        <collection property="resume_education" ofType="com.xxx.server.pojo.ResumeEducation">
+            <result column="school_name" property="school_name"/>
+            <result column="major" property="major"/>
+        </collection>
     </resultMap>
 
     <!-- 通用查询结果列 -->
@@ -23,5 +72,104 @@
             uja.user_id=#{uid}
           and
             uja.job_id=#{jid}
+    </select>
+
+<!--    根据uid查询投递职位信息-->
+    <select id="getApplyJobInfo" resultMap="getApplyJobInfoByOthers">
+        SELECT
+            j.id as jid,
+            j.name as jname,
+            j.salary,
+            j.experience,
+            j.qualification,
+            c.name as cname,
+            c.id as cid,
+            c.address,
+            c.tag,
+            c.type,
+            c.size,
+            c.icon,
+            uja.create_date,
+            uja.state
+        from
+            user_job_applycation uja
+                LEFT JOIN job j ON uja.job_id = j.id
+                LEFT JOIN company c ON j.company_id = c.id
+        where
+            uja.user_id = #{uid}
+
+        <if test="null!=state and ''!=state">
+            AND uja.`state` =#{state}
+        </if>
+
+
+    </select>
+
+<!--    根据uid查询所有投递简历-->
+    <select id="getAllResume" resultMap="getAllResumeByOthers">
+        select
+            uja.id,
+            r.id as rid,
+            rb.applicant_avatar,
+            rb.applicant_name,
+            rb.applicant_sex,
+            rb.applicant_age,
+            rb.applicant_identity,
+            rb.working_year,
+            rb.applicant_education,
+            re.school_name,
+            j.name,
+            uja.create_date
+        from
+            user_job_applycation uja
+                LEFT JOIN job j on uja.job_id =j.id
+                LEFT JOIN user_resume  ur on uja.user_id=ur.user_id
+                LEFT JOIN resume r on r.id=ur.resume_id
+                LEFT JOIN resume_baseinfo rb on  r.baseinfo_id = rb.id
+                LEFT JOIN resume_education re on r.education_id = re.education_id
+        where
+            uja.job_id  in (select job.id from job where job.user_id = #{uid} )
+            AND uja.state=#{status}
+    </select>
+
+<!--    更新投递简历的状态-->
+    <update id="updateApplyStatus" >
+        update user_job_applycation set user_job_applycation.state=#{status}
+        where user_job_applycation.id = #{applyId}
+    </update>
+
+<!--    根据uid获取少量投递简历-->
+    <select id="getLittleResume" resultMap="getAllResumeByOthers">
+        select
+            uja.id,
+            r.id as rid,
+            rb.applicant_avatar,
+            rb.applicant_name,
+            rb.applicant_sex,
+            rb.applicant_age,
+            rb.applicant_identity,
+            rb.working_year,
+            rb.applicant_education,
+            rb.applicant_city,
+            re.school_name,
+            re.major,
+            j.id as jid,
+            j.name,
+            j.salary,
+            j.qualification,
+            j.experience,
+            uja.create_date
+        from
+            user_job_applycation uja
+                LEFT JOIN job j on uja.job_id =j.id
+                LEFT JOIN user_resume  ur on uja.user_id=ur.user_id
+                LEFT JOIN resume r on r.id=ur.resume_id
+                LEFT JOIN resume_baseinfo rb on  r.baseinfo_id = rb.id
+                LEFT JOIN resume_education re on r.education_id = re.education_id
+        where
+            uja.job_id  in (select job.id from job where job.user_id = #{uid} )
+
+        limit 4;
+
     </select>
 </mapper>

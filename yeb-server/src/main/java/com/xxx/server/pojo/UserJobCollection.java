@@ -1,5 +1,6 @@
 package com.xxx.server.pojo;
 
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
@@ -31,6 +32,14 @@ public class UserJobCollection implements Serializable {
     private Integer user_id;
 
     private Integer job_id;
+
+    @ApiModelProperty(value = "job")
+    @TableField(exist = false)
+    private Job job;
+
+    @ApiModelProperty(value = "company")
+    @TableField(exist = false)
+    private Company company;
 
 
 }

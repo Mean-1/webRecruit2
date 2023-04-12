@@ -42,4 +42,10 @@ public class ResumeEducationController {
         return RespBean.error("error");
     }
 
+    @ApiOperation("删除education")
+    @DeleteMapping("/deleteById/{id}")
+    public RespBean deleteById(@PathVariable Integer id){
+        return resumeEducationService.deleteById(id);
+    }
+
 }

@@ -20,4 +20,11 @@ public interface IResumeEducationService extends IService<ResumeEducation> {
      * @return
      */
     RespBean getEducationByResumeId(Integer resume_id);
+
+    /**
+     * 删除education
+     * @param id
+     * @return
+     */
+    RespBean deleteById(Integer id);
 }

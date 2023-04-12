@@ -73,13 +73,21 @@ public class JobServiceImpl extends ServiceImpl<JobMapper, Job> implements IJobS
      * @return
      */
     @Override
-    public Job getJobById(Integer id, Boolean isDetail) {
+    public RespBean getJobById(Integer id, Boolean isDetail) {
 
-        if(true==isDetail)
-            return jobMapper.getJobDetailById(id);
-        else if(false==isDetail)
-            return jobMapper.getJobById(id);
-        return null;
+        if(true==isDetail){
+            Job jobDetailById = jobMapper.getJobDetailById(id);
+            if(null!=jobDetailById){
+                return RespBean.success("success",jobDetailById);
+            }
+        }
+        else if(false==isDetail){
+            Job jobById = jobMapper.getJobById(id);
+            if(null!=jobById){
+                return RespBean.success("success",jobById);
+            }
+        }
+        return RespBean.error("error");
     }
 
     /**

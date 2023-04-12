@@ -9,6 +9,25 @@
         <result column="job_id" property="job_id" />
     </resultMap>
 
+    <resultMap id="getCollectionJobInfoWithOthers" type="com.xxx.server.pojo.UserJobCollection" extends="BaseResultMap">
+        <collection property="job" ofType="com.xxx.server.pojo.Job">
+            <id column="jid" property="id"/>
+            <result column="jname" property="name"/>
+            <result column="salary" property="salary"/>
+            <result column="qualification" property="qualification"/>
+            <result column="experience" property="experience"/>
+        </collection>
+        <collection property="company" ofType="com.xxx.server.pojo.Company">
+            <id column="cid" property="id"/>
+            <result column="cname" property="name"/>
+            <result column="address" property="address"/>
+            <result column="tag" property="tag"/>
+            <result column="type" property="type"/>
+            <result column="size" property="size"/>
+            <result column="icon" property="icon"/>
+        </collection>
+    </resultMap>
+
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
         id, user_id, job_id
@@ -23,5 +42,28 @@
             ujc.user_id=#{uid}
           and
             ujc.job_id=#{jid}
+    </select>
+
+    <select id="getCollectionJobInfo" resultMap="getCollectionJobInfoWithOthers">
+        SELECT
+            j.id as jid,
+            j.name as jname,
+            j.salary,
+            j.experience,
+            j.qualification,
+            c.name as cname,
+            c.id as cid,
+            c.address,
+            c.tag,
+            c.type,
+            c.size,
+            c.icon,
+            ujc.id
+        from
+            user_job_collection ujc
+                LEFT JOIN job j ON ujc.job_id = j.id
+                LEFT JOIN company c ON j.company_id = c.id
+        where
+            ujc.user_id = #{uid}
     </select>
 </mapper>

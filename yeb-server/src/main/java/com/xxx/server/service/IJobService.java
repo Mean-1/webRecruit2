@@ -42,7 +42,7 @@ public interface IJobService extends IService<Job> {
      * @param isDetail
      * @return
      */
-    Job getJobById(Integer id, Boolean isDetail);
+    RespBean getJobById(Integer id, Boolean isDetail);
 
     /**
      * 根据公司id查询job

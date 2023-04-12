@@ -19,5 +19,12 @@ public interface IResumeProjectsService extends IService<ResumeProjects> {
      * @param resume_id
      * @return
      */
-    RespBean getEducationByResumeId(Integer resume_id);
+    RespBean getProjectsByResumeId(Integer resume_id);
+
+    /**
+     * 删除project
+     * @param id
+     * @return
+     */
+    RespBean deleteById(Integer id);
 }

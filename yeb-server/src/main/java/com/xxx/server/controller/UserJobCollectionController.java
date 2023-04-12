@@ -2,6 +2,7 @@ package com.xxx.server.controller;
 
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.xxx.server.pojo.CollectionJobParam;
 import com.xxx.server.pojo.RespBean;
 import com.xxx.server.pojo.RespPageBean;
 import com.xxx.server.pojo.UserJobCollection;
@@ -45,5 +46,20 @@ public class UserJobCollectionController {
     public RespBean deleteCollection(@PathVariable Integer uid, @PathVariable Integer jid){
        return userJobCollectionService.deleteCollection(uid, jid);
     }
+
+    @ApiOperation(value = "根据uid查询收藏职位信息")
+    @GetMapping("/getCollectionJobInfo")
+    public RespPageBean getCollectionJobInfo(@RequestParam(defaultValue = "1") Integer currentPage,
+                                         @RequestParam(defaultValue = "10") Integer size,
+                                         @RequestParam Integer uid){
+        return userJobCollectionService.getCollectionJobInfo(currentPage,size,uid);
+    }
+
+    @ApiOperation(value = "批量删除收藏职位")
+    @DeleteMapping("/deleteLotCollection")
+    public RespBean deleteLotCollection(@RequestBody CollectionJobParam collectionJobParam){
+        return userJobCollectionService.deleteLotCollection(collectionJobParam.getSelectedJobIds(),collectionJobParam.getUid());
+    }
+
 
 }

@@ -2,6 +2,7 @@ package com.xxx.server.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.xxx.server.pojo.RespBean;
+import com.xxx.server.pojo.RespPageBean;
 import com.xxx.server.pojo.UserJobCollection;
 import io.swagger.models.auth.In;
 
@@ -38,4 +39,21 @@ public interface IUserJobCollectionService extends IService<UserJobCollection> {
      * @return
      */
     RespBean deleteCollection(Integer uid, Integer jid);
+
+    /**
+     * 根据uid查询收藏职位信息
+     * @param currentPage
+     * @param size
+     * @param uid
+     * @return
+     */
+    RespPageBean getCollectionJobInfo(Integer currentPage, Integer size, Integer uid);
+
+    /**
+     * 批量删除职位
+     * @param selectedJobIds
+     * @param uid
+     * @return
+     */
+    RespBean deleteLotCollection(Integer[] selectedJobIds, Integer uid);
 }

@@ -9,6 +9,8 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * <p>
  *  服务实现类
@@ -31,9 +33,22 @@ public class ResumeExperienceServiceImpl extends ServiceImpl<ResumeExperienceMap
      */
     @Override
     public RespBean getExperienceByResumeId(Integer resume_id) {
-        ResumeExperience resumeExperience = resumeExperienceMapper.selectOne(new QueryWrapper<ResumeExperience>().eq("resume_id", resume_id));
-        if(null!=resumeExperience){
-            return RespBean.success("success",resumeExperience);
+        List<ResumeExperience> resumeExperiences = resumeExperienceMapper.selectList(new QueryWrapper<ResumeExperience>().eq("resume_id", resume_id));
+        if(null!=resumeExperiences){
+            return RespBean.success("success",resumeExperiences);
+        }
+        return RespBean.error("error");
+    }
+
+    /**
+     * 删除experience
+     * @param id
+     * @return
+     */
+    @Override
+    public RespBean deleteById(Integer id) {
+        if(1==resumeExperienceMapper.deleteById(id)){
+            return RespBean.success("success");
         }
         return RespBean.error("error");
     }
