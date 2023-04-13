@@ -43,4 +43,20 @@ public interface UsersMapper extends BaseMapper<Users> {
      * @return
      */
     int updatePassword(@Param("id") Integer id,@Param("newPassword") String newPassword);
+
+    /**
+     * 更新用户的username
+     * @param id
+     * @param newUsername
+     * @return
+     */
+    int updateUsername(@Param("id") Integer id,@Param("newUsername") String newUsername);
+
+    /**
+     * 更新用户的email
+     * @param id
+     * @param newEmail
+     * @return
+     */
+    int updateEmail(@Param("id") Integer id,@Param("newEmail") String newEmail);
 }

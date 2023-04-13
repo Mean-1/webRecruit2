@@ -82,4 +82,11 @@ public interface IUserJobApplycationService extends IService<UserJobApplycation>
      * @return
      */
     List<UserJobApplycation> getLittleResume(Integer uid);
+
+    /**
+     * 根据uid查询少量投递职位信息
+     * @param uid
+     * @return
+     */
+    RespBean getLittleApplyJobInfo(Integer uid);
 }

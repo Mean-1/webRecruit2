@@ -43,6 +43,11 @@ public class UsersController {
         return recruiterCompanyService.updateInfo(updateRecruiterInfoParam);
     }
 
+    @ApiOperation(value = "根据uid获取用户信息")
+    @GetMapping("/getUserInfoByuid/{id}")
+    public RespBean getUserInfoByuid(@PathVariable Integer id){
+        return usersService.getUserInfoByuid(id);
+    }
     @ApiOperation(value = "更新用户的phone")
     @PostMapping("/updatePhone")
     public RespBean updatePhone(@RequestParam Integer id, @RequestParam String oldPassword,@RequestParam String newPhone){
@@ -51,6 +56,30 @@ public class UsersController {
         }
         return RespBean.error("密码错误");
     }
+
+    @ApiOperation(value = "更新用户的username")
+    @PostMapping("/updateUsername")
+    public RespBean updateUsername(@RequestParam Integer id,@RequestParam String oldPassword,@RequestParam String newUsername){
+        System.out.println(usersService.getUserByUsername(newUsername));
+        if(true==compaPsw(id, oldPassword)){
+            if(null!=usersService.getUserByUsername(newUsername)){
+                return RespBean.error("用户名已被占用");
+            }else{
+                return usersService.updateUsername(id,newUsername);
+            }
+        }else {
+            return RespBean.error("密码错误");
+        }
+    }
+    @ApiOperation(value = "更新用户的email")
+    @PostMapping("/updateEmail")
+    public RespBean updateEmail(@RequestParam Integer id,@RequestParam String oldPassword,@RequestParam String newEmail){
+        if(true==compaPsw(id, oldPassword)){
+            return usersService.updateEmail(id,newEmail);
+        }
+        return RespBean.error("密码错误");
+    }
+
     @ApiOperation(value = "更新用户的password")
     @PostMapping("/updatePassword")
     public RespBean updatePassword(@RequestParam Integer id, @RequestParam String oldPassword,@RequestParam String newPassword){

@@ -59,6 +59,13 @@ public class UserJobApplycationController {
         return userJobApplycationService.getApplyJobInfo(currentPage,size,state,uid);
     }
 
+    @ApiOperation("根据uid查询少量投递职位信息（6条数据）")
+    @GetMapping("/getLittleApplyJobInfo/{uid}")
+    public RespBean getLittleApplyJobInfo(@PathVariable Integer uid){
+        return userJobApplycationService.getLittleApplyJobInfo(uid);
+    }
+
+
     @ApiOperation("根据uid查询所有投递简历")
     @GetMapping("/getAllResume")
     public RespPageBean getAllResume(@RequestParam(defaultValue = "1") Integer currentPage,

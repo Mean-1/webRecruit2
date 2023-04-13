@@ -162,5 +162,55 @@ public class UsersServiceImpl extends ServiceImpl<UsersMapper, Users> implements
         return RespBean.error("更新失败");
     }
 
+    /**
+     * 更新用户的username
+     * @param id
+     * @param newUsername
+     * @return
+     */
+    @Override
+    public RespBean updateUsername(Integer id, String newUsername) {
+
+        if(null!=id&&null!=newUsername){
+
+            if(0!=usersMapper.updateUsername(id,newUsername)){
+                return RespBean.success("success");
+            }
+        }
+        return RespBean.error("更新username失败");
+    }
+
+    /**
+     * 更新用户的email
+     * @param id
+     * @param newEmail
+     * @return
+     */
+    @Override
+    public RespBean updateEmail(Integer id, String newEmail) {
+
+        if(null!=id&&null!=newEmail){
+
+            if(0!=usersMapper.updateEmail(id,newEmail)){
+                return RespBean.success("success");
+            }
+        }
+        return RespBean.error("更新email失败");
+    }
+
+    /**
+     * 根据uid获取用户信息
+     * @param id
+     * @return
+     */
+    @Override
+    public RespBean getUserInfoByuid(Integer id) {
+        Users users = usersMapper.selectOne(new QueryWrapper<Users>().eq("id", id));
+        if(null!=users){
+            return RespBean.success("success",users);
+        }
+        return RespBean.error("error");
+    }
+
 
 }

@@ -53,4 +53,18 @@ public class ResumeIntentionServiceImpl extends ServiceImpl<ResumeIntentionMappe
         }
         return RespBean.error("error");
     }
+
+    /**
+     * 根据resume_id获取一条intention数据
+     * @param resume_id
+     * @return
+     */
+    @Override
+    public RespBean getOneIntentionByResumeId(Integer resume_id) {
+        ResumeIntention resumeIntention = resumeIntentionMapper.selectOne(new QueryWrapper<ResumeIntention>().eq("resume_id", resume_id));
+        if(null!=resumeIntention){
+            return RespBean.success("success",resumeIntention);
+        }
+        return RespBean.error("error",resumeIntention);
+    }
 }

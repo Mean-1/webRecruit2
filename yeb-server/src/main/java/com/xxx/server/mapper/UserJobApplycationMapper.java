@@ -57,4 +57,11 @@ public interface UserJobApplycationMapper extends BaseMapper<UserJobApplycation>
      * @return
      */
     List<UserJobApplycation> getLittleResume(@Param("uid") Integer uid);
+
+    /**
+     * 根据uid查询少量投递职位信息
+     * @param uid
+     * @return
+     */
+    List<UserJobApplycation> getLittleApplyJobInfo(Integer uid);
 }

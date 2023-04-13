@@ -175,4 +175,18 @@ public class UserJobApplycationServiceImpl extends ServiceImpl<UserJobApplycatio
 
         return userJobApplycationMapper.getLittleResume(uid);
     }
+
+    /**
+     * 根据uid查询少量投递职位信息
+     * @param uid
+     * @return
+     */
+    @Override
+    public RespBean getLittleApplyJobInfo(Integer uid) {
+        List<UserJobApplycation> list = userJobApplycationMapper.getLittleApplyJobInfo(uid);
+        if(null!=list){
+            return RespBean.success("success",list);
+        }
+        return RespBean.error("error");
+    }
 }

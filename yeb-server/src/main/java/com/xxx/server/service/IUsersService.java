@@ -59,4 +59,27 @@ public interface IUsersService extends IService<Users> {
      * @return
      */
     RespBean updatePassword(Integer id, String newPassword);
+
+    /**
+     * 更新用户的username
+     * @param id
+     * @param newUsername
+     * @return
+     */
+    RespBean updateUsername(Integer id, String newUsername);
+
+    /**
+     * 更新用户的email
+     * @param id
+     * @param newEmail
+     * @return
+     */
+    RespBean updateEmail(Integer id, String newEmail);
+
+    /**
+     *
+     * @param id
+     * @return
+     */
+    RespBean getUserInfoByuid(Integer id);
 }

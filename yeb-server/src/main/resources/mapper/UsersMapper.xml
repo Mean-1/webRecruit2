@@ -41,4 +41,22 @@
         where
             users.id=#{id}
     </update>
+
+<!--    更新用户的username-->
+    <update id="updateUsername">
+        update
+            users
+        set users.username=#{newUsername}
+        where
+            users.id=#{id}
+    </update>
+
+<!--    更新用户的email-->
+    <update id="updateEmail">
+        update
+            users
+        set users.email=#{newEmail}
+        where
+            users.id=#{id}
+    </update>
 </mapper>

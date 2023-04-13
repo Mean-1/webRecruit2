@@ -25,12 +25,18 @@ public class ResumeIntentionController {
     @Autowired
     private IResumeIntentionService resumeIntentionService;
 
-    @ApiOperation("根据resume_id获取intention")
+    @ApiOperation("根据resume_id获取intention列表")
     @GetMapping("/getIntentionByResumeId/{resume_id}")
     public RespBean getIntentionByResumeId(@PathVariable Integer resume_id){
 
         return resumeIntentionService.getEducationByResumeId(resume_id);
     }
+    @ApiOperation("根据resume_id获取一条intention数据")
+    @GetMapping("/getOneIntentionByResumeId/{resume_id}")
+    public RespBean getOneIntentionByResumeId(@PathVariable Integer resume_id){
+        return resumeIntentionService.getOneIntentionByResumeId(resume_id);
+    }
+
 
     @ApiOperation("更新或添加Intention")
     @PostMapping("/saveOrUpdate")
