@@ -25,7 +25,7 @@ public class CompanyController {
     @Autowired
     private ICompanyService companyService;
 
-    @ApiOperation(value = "获取所有company")
+    @ApiOperation(value = "获取所有company(8条数据)")
     @GetMapping("/getCompany")
     public RespBean getCompany(){
         return companyService.getCompany();

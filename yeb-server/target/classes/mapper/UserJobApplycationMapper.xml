@@ -105,6 +105,33 @@
 
     </select>
 
+<!--    根据uid查询少量投递职位信息-->
+    <select id="getLittleApplyJobInfo" resultMap="getApplyJobInfoByOthers">
+        SELECT
+        j.id as jid,
+        j.name as jname,
+        j.salary,
+        j.experience,
+        j.qualification,
+        c.name as cname,
+        c.id as cid,
+        c.address,
+        c.tag,
+        c.type,
+        c.size,
+        c.icon,
+        uja.create_date,
+        uja.state
+        from
+        user_job_applycation uja
+        LEFT JOIN job j ON uja.job_id = j.id
+        LEFT JOIN company c ON j.company_id = c.id
+        where
+        uja.user_id = #{uid}
+
+        limit 6;
+    </select>
+
 <!--    根据uid查询所有投递简历-->
     <select id="getAllResume" resultMap="getAllResumeByOthers">
         select
