@@ -68,6 +68,8 @@
                 LEFT JOIN job ON job.company_id=company.id
         where
             1=1
+        GROUP BY company.id
+            limit 8
     </select>
 
 <!--    根据条件搜索公司的基本信息-->

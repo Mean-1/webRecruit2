@@ -55,7 +55,7 @@
     <update id="updateEmail">
         update
             users
-        set users.email=#{newEmail}
+        set users.username=#{newEmail}
         where
             users.id=#{id}
     </update>

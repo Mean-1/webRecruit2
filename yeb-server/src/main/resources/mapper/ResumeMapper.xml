@@ -5,6 +5,7 @@
     <!-- 通用查询映射结果 -->
     <resultMap id="BaseResultMap" type="com.xxx.server.pojo.Resume">
         <id column="id" property="id" />
+        <result column="user_id" property="user_id"/>
         <result column="baseinfo_id" property="baseinfo_id" />
         <result column="education_id" property="education_id" />
         <result column="experience_id" property="experience_id" />
@@ -17,7 +18,13 @@
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        id, baseinfo_id, education_id, experience_id, intention_id, projects_id, selfevaluation_id, skill_id, created_at
+        id,user_id, baseinfo_id, education_id, experience_id, intention_id, projects_id, selfevaluation_id, skill_id, created_at
     </sql>
 
+    <insert id="insertOneDate">
+        INSERT INTO resume (user_id) VALUES (#{uid});
+    </insert>
+
+<!--    这个sql能够正确的执行，但是在这里不能这样用（未找到其他解决办法）-->
+<!--    INSERT INTO resume (baseinfo_id) VALUES (null); SELECT LAST_INSERT_ID();-->
 </mapper>

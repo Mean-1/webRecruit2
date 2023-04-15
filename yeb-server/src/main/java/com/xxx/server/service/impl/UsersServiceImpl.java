@@ -2,8 +2,12 @@ package com.xxx.server.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.xxx.server.config.security.component.JwtTokenUtil;
+import com.xxx.server.mapper.ResumeMapper;
+import com.xxx.server.mapper.UserResumeMapper;
 import com.xxx.server.mapper.UsersMapper;
 import com.xxx.server.pojo.RespBean;
+import com.xxx.server.pojo.Resume;
+import com.xxx.server.pojo.UserResume;
 import com.xxx.server.pojo.Users;
 import com.xxx.server.service.IUsersService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
@@ -36,6 +40,12 @@ public class UsersServiceImpl extends ServiceImpl<UsersMapper, Users> implements
 
     @Autowired
     private UsersMapper usersMapper;
+
+    @Autowired
+    private ResumeMapper resumeMapper;
+
+    @Autowired
+    private UserResumeMapper userResumeMapper;
 
     @Autowired
     private UserDetailsService userDetailsService;
@@ -120,10 +130,25 @@ public class UsersServiceImpl extends ServiceImpl<UsersMapper, Users> implements
         if(null==phone||null==password){
             return RespBean.error("账号或密码为空，添加失败");
         }
+
+
         //插入数据
-        Integer result = usersMapper.addUser(str,phone, passwordEncoder.encode(password),code);
-        if(1==result)
+        int uid = usersMapper.addUser(str,phone, passwordEncoder.encode(password),code);
+//        System.out.println("uid:"+uid);
+        if(0!=uid){
+            //注册用户后添加用户对应的一个空简历
+//            int rid= resumeMapper.insertOneDate();
+//            System.out.println("rid:"+rid);
+//            UserResume userResume = new UserResume();
+//            userResume.setResume_id(rid);
+//            userResume.setUser_id(uid);
+//            if(0!=userResumeMapper.insert(userResume)){
+//                return RespBean.success("success");
+//            }else {
+//                return RespBean.error("注册用户后添加简历失败");
+//            }
             return RespBean.success("success");
+        }
         else
             return RespBean.error("添加失败");
     }

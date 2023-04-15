@@ -28,6 +28,7 @@ public class Resume implements Serializable {
     @TableId(value = "id", type = IdType.AUTO)
     private Integer id;
 
+    private Integer user_id;
     private Integer baseinfo_id;
 
     private Integer education_id;

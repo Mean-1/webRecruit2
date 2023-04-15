@@ -19,4 +19,11 @@ public interface IUserResumeService extends IService<UserResume> {
      * @return
      */
     Integer getRidByUid(Integer uid);
+
+    /**
+     * 添加新用户和简历的关系
+     * @param uid
+     * @return
+     */
+    Integer addUserResume(Integer uid);
 }
