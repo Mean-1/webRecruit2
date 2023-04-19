@@ -51,6 +51,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     public void configure(WebSecurity web) throws Exception {
         web.ignoring().antMatchers(
                 "/login",
+                "/company/**",
+                "/job/**",
+                "/job/listLittle/**",
                 "/logout",
                 "/css/**",
                 "/js/**",
